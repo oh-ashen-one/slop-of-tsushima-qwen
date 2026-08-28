@@ -1,0 +1,607 @@
+{
+  "url": "http://127.0.0.1:5173",
+  "shots": [
+    {
+      "name": "golden_hour_vista",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/golden_hour_vista.png",
+      "desc": "Wide valley vista, low golden sun, long shadows, haze layers",
+      "ms": 429,
+      "stats": {
+        "drawCalls": 52,
+        "triangles": 47694,
+        "programs": 79,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 2.486220077590343,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.63
+          ],
+          [
+            "sky",
+            0.42
+          ],
+          [
+            "lighting",
+            0.16
+          ],
+          [
+            "horse",
+            0.05
+          ],
+          [
+            "wildlife",
+            0.04
+          ],
+          [
+            "player",
+            0.03
+          ],
+          [
+            "weather",
+            0.02
+          ],
+          [
+            "physics",
+            0.02
+          ],
+          [
+            "clouds",
+            0.02
+          ],
+          [
+            "particles",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 3.206666666269302
+      }
+    },
+    {
+      "name": "dawn_mist_valley",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/dawn_mist_valley.png",
+      "desc": "Cold blue dawn, ground mist in the low ground, sun just cresting",
+      "ms": 516,
+      "stats": {
+        "drawCalls": 69,
+        "triangles": 138937,
+        "programs": 131,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 3.114079635722233,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            2.06
+          ],
+          [
+            "sky",
+            0.3
+          ],
+          [
+            "lighting",
+            0.2
+          ],
+          [
+            "wildlife",
+            0.08
+          ],
+          [
+            "horse",
+            0.05
+          ],
+          [
+            "player",
+            0.04
+          ],
+          [
+            "clouds",
+            0.03
+          ],
+          [
+            "town",
+            0.03
+          ],
+          [
+            "timeOfDay",
+            0.02
+          ],
+          [
+            "physics",
+            0.02
+          ]
+        ],
+        "gpuFrameMs": 3.546666665871938
+      }
+    },
+    {
+      "name": "high_noon_desert",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/high_noon_desert.png",
+      "desc": "Harsh overhead light, heat haze, arid rock and scrub",
+      "ms": 358,
+      "stats": {
+        "drawCalls": 51,
+        "triangles": 30494,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 1.8335270973502944,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.33
+          ],
+          [
+            "sky",
+            0.19
+          ],
+          [
+            "wildlife",
+            0.06
+          ],
+          [
+            "horse",
+            0.06
+          ],
+          [
+            "player",
+            0.03
+          ],
+          [
+            "lighting",
+            0.02
+          ],
+          [
+            "clouds",
+            0.02
+          ],
+          [
+            "weather",
+            0.01
+          ],
+          [
+            "physics",
+            0.01
+          ],
+          [
+            "particles",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 1.7833333333333334
+      }
+    },
+    {
+      "name": "town_street",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/town_street.png",
+      "desc": "Main street of the settlement, buildings, props, warm afternoon",
+      "ms": 379,
+      "stats": {
+        "drawCalls": 85,
+        "triangles": 256021,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 2.68688526721758,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            2.21
+          ],
+          [
+            "sky",
+            0.11
+          ],
+          [
+            "horse",
+            0.05
+          ],
+          [
+            "lighting",
+            0.05
+          ],
+          [
+            "wildlife",
+            0.04
+          ],
+          [
+            "player",
+            0.03
+          ],
+          [
+            "timeOfDay",
+            0.02
+          ],
+          [
+            "clouds",
+            0.02
+          ],
+          [
+            "weather",
+            0.01
+          ],
+          [
+            "town",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 2.756666668256124
+      }
+    },
+    {
+      "name": "night_camp",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/night_camp.png",
+      "desc": "Deep night, campfire as the key light, stars and milky way visible",
+      "ms": 311,
+      "stats": {
+        "drawCalls": 51,
+        "triangles": 30494,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 1.8871112604992872,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.53
+          ],
+          [
+            "sky",
+            0.11
+          ],
+          [
+            "horse",
+            0.05
+          ],
+          [
+            "wildlife",
+            0.03
+          ],
+          [
+            "timeOfDay",
+            0.02
+          ],
+          [
+            "player",
+            0.02
+          ],
+          [
+            "physics",
+            0.01
+          ],
+          [
+            "town",
+            0.01
+          ],
+          [
+            "clouds",
+            0.01
+          ],
+          [
+            "weather",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 1.6766666650772095
+      }
+    },
+    {
+      "name": "storm_plains",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/storm_plains.png",
+      "desc": "Heavy rain, wet ground, dark towering cloud, wind-lashed grass",
+      "ms": 362,
+      "stats": {
+        "drawCalls": 69,
+        "triangles": 138937,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 2.0365157234225864,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.58
+          ],
+          [
+            "sky",
+            0.13
+          ],
+          [
+            "horse",
+            0.05
+          ],
+          [
+            "wildlife",
+            0.04
+          ],
+          [
+            "physics",
+            0.03
+          ],
+          [
+            "player",
+            0.02
+          ],
+          [
+            "particles",
+            0.02
+          ],
+          [
+            "lighting",
+            0.02
+          ],
+          [
+            "clouds",
+            0.02
+          ],
+          [
+            "town",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 2.1333333333333333
+      }
+    },
+    {
+      "name": "river_bend",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/river_bend.png",
+      "desc": "Water surface, reflections, refraction, foam at the bank",
+      "ms": 327,
+      "stats": {
+        "drawCalls": 51,
+        "triangles": 30494,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 1.5864671466850022,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.23
+          ],
+          [
+            "sky",
+            0.11
+          ],
+          [
+            "horse",
+            0.07
+          ],
+          [
+            "lighting",
+            0.03
+          ],
+          [
+            "clouds",
+            0.02
+          ],
+          [
+            "player",
+            0.02
+          ],
+          [
+            "wildlife",
+            0.02
+          ],
+          [
+            "town",
+            0.01
+          ],
+          [
+            "particles",
+            0.01
+          ],
+          [
+            "weather",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 1.7799999992052713
+      }
+    },
+    {
+      "name": "forest_interior",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/forest_interior.png",
+      "desc": "Inside the treeline, dappled light through canopy, undergrowth",
+      "ms": 328,
+      "stats": {
+        "drawCalls": 54,
+        "triangles": 67689,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 1.8188666365272461,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.48
+          ],
+          [
+            "sky",
+            0.08
+          ],
+          [
+            "horse",
+            0.06
+          ],
+          [
+            "wildlife",
+            0.03
+          ],
+          [
+            "lighting",
+            0.02
+          ],
+          [
+            "player",
+            0.02
+          ],
+          [
+            "clouds",
+            0.01
+          ],
+          [
+            "weather",
+            0.01
+          ],
+          [
+            "particles",
+            0.01
+          ],
+          [
+            "camera",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 1.8166666666666667
+      }
+    },
+    {
+      "name": "player_third_person",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/player_third_person.png",
+      "desc": "Over-the-shoulder gameplay framing with the character and horse",
+      "ms": 355,
+      "stats": {
+        "drawCalls": 65,
+        "triangles": 159588,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 2.1852572675203414,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.83
+          ],
+          [
+            "sky",
+            0.08
+          ],
+          [
+            "horse",
+            0.04
+          ],
+          [
+            "player",
+            0.02
+          ],
+          [
+            "clouds",
+            0.02
+          ],
+          [
+            "wildlife",
+            0.02
+          ],
+          [
+            "lighting",
+            0.02
+          ],
+          [
+            "weather",
+            0.01
+          ],
+          [
+            "particles",
+            0.01
+          ],
+          [
+            "town",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 2.2366666654745737
+      }
+    },
+    {
+      "name": "moonlit_ridge",
+      "file": "/Users/midir/arena-ep02-qwen-main/shots/latest/moonlit_ridge.png",
+      "desc": "Blue moonlit ridgeline, volumetric night haze, silhouettes",
+      "ms": 320,
+      "stats": {
+        "drawCalls": 51,
+        "triangles": 30494,
+        "programs": 158,
+        "textures": 102,
+        "geometries": 52,
+        "frameMs": 1.776045838852824,
+        "quality": "medium",
+        "failedSystems": [],
+        "systemMs": [
+          [
+            "__render",
+            1.38
+          ],
+          [
+            "sky",
+            0.11
+          ],
+          [
+            "wildlife",
+            0.04
+          ],
+          [
+            "horse",
+            0.04
+          ],
+          [
+            "lighting",
+            0.03
+          ],
+          [
+            "physics",
+            0.02
+          ],
+          [
+            "town",
+            0.02
+          ],
+          [
+            "player",
+            0.02
+          ],
+          [
+            "clouds",
+            0.01
+          ],
+          [
+            "weather",
+            0.01
+          ]
+        ],
+        "gpuFrameMs": 1.85
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "[water] terrain hydrology unavailable — water disabled",
+    "[vegetation] terrain is not ready — vegetation disabled",
+    "[scatter] terrain not ready — scatter disabled"
+  ],
+  "ok": true,
+  "timings": {
+    "bootMs": 2429
+  },
+  "totalMs": 6115
+}
