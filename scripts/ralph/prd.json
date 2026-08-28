@@ -1,0 +1,146 @@
+{
+  "project": "golden-field-ep02-qwen-main",
+  "userStories": [
+    {
+      "id": "US-001",
+      "priority": 1,
+      "passes": false,
+      "blocked": true,
+      "managerInterventions": 2,
+      "description": "Grass palette retune to gold-green golden field. Find the grass color constants in src/world/vegetation/ and src/world/terrain/ and change them from dusty brown toward golden green (base #7A8B3C, tip #C9B458, dry #D9C07A). Keep the hex format the file already uses.\n\nMANAGER: STOP EXPLORING. The palette lives in ONE place: src/world/vegetation/VegTextures.js, the recipes array near line 1273. Make ONLY these edits: ROW 0 tall bunches \u2014 hue 68->54, 62->50, 66->52, 58->48. ROW 1 fine turf \u2014 hue 80->66, 84->70, 76->62, 88->72. In ROW 0 and ROW 1 raise each li value by +0.04. Change nothing else in the file. Your reply MUST be exactly ONE ### FILE: block containing the COMPLETE VegTextures.js, then the VERIFY line. No prose, no explanation, no exploration.\n\nMANAGER: CORRECTION (supersedes the earlier MANAGER note): the whole-file demand was impossible \u2014 the snapshot omits this 54KB file and the fence now allows it. Emit ### PATCH blocks ONLY, with these EXACT current lines and replacements from src/world/vegetation/VegTextures.js recipes array: (1) change the four ROW-0 bunch lines hue values 68->54, 62->50, 66->52, 58->48 AND their li values 0.48->0.52, 0.51->0.55, 0.46->0.50, 0.53->0.57. (2) change the four ROW-1 bunch lines hue 80->66, 84->70, 76->62, 88->72 AND li 0.42->0.46, 0.39->0.43, 0.45->0.49, 0.37->0.41. Each line begins with four spaces then bunch({ n: \u2014 match them exactly. Emit nothing but the PATCH blocks and the VERIFY line.",
+      "acceptanceCriteria": [
+        "grass colors changed to gold-green family",
+        "npm run build passes",
+        "npm run capture:fast completes with errors: []"
+      ],
+      "allowedFiles": [
+        "src/world/vegetation/VegTextures.js"
+      ],
+      "verify": "npm run build && npm run capture:fast && grep -qE \"hue: (54|50|52|48|66|70|62|72),\" src/world/vegetation/VegTextures.js",
+      "title": "Gold-green grass palette",
+      "blocked_reason": "ublished from the terrain side of src/world so vegetation and ground\n *  paint share one source (replaces the dusty-brown family). */\nexport const GOLDEN_GRASS_PAL = { base: 0x7A8B3C, tip: 0xC9B458, dry: 0xD9C07A };\n\nexport class Terrain {\n  static id = 'terrain';\n  async init() {}\n  update() {}\n  lateUpdate() {}\n  resize() {}\n  dispose() {}\n}\n```\n### END FILE\n\nVERIFY: python3 scripts/ralph/strip_markers.py && npm run build && npm run capture:fast && grep -qiE '7A8B3C|C9B458|D9C07A' -r src/world"
+    },
+    {
+      "id": "US-002",
+      "priority": 2,
+      "passes": true,
+      "blocked": false,
+      "managerInterventions": 0,
+      "description": "Pampas grass look: make the grass TALLER and DENSER (waist-high). Find the grass blade height and density constants in src/world/vegetation/ and raise them roughly 1.5-2x. Waist-high on the 1.78m ronin.",
+      "acceptanceCriteria": [
+        "height/density constants raised",
+        "build passes",
+        "capture:fast errors: []"
+      ],
+      "allowedFiles": [
+        "src/world/vegetation/Vegetation.js"
+      ],
+      "verify": "npm run build && npm run capture:fast",
+      "title": "Pampas grass height and density"
+    },
+    {
+      "id": "US-003",
+      "priority": 3,
+      "passes": true,
+      "blocked": false,
+      "managerInterventions": 1,
+      "description": "White wildflowers: scatter small white flower specks through the grass (instance count a few hundred across the field near spawn, color #F2F0E6, small quads or crosses on the grass blades). Implement inside the existing vegetation/scatter system \u2014 do NOT invent a new subsystem.\n\nMANAGER: EMISSION LAW: emit ### PATCH blocks only \u2014 each hunk anchored on exact current lines from the target file. NEVER emit a whole file for any file larger than ~20KB (VegTextures.js, Vegetation.js, Terrain.js, Grass.js, Scatter.js are all too big \u2014 whole-file emission gets truncated and skipped, which is what just failed). Small new files (a new module you create) MAY be whole-file. If you need current lines, they are in the snapshot if the file is small; for large files anchor on the exact constant/line you are changing as shown in the story or BRIEF.",
+      "acceptanceCriteria": [
+        "white flower specks exist in the scatter code",
+        "build passes",
+        "capture:fast errors: []"
+      ],
+      "allowedFiles": [
+        "src/world/vegetation/Vegetation.js",
+        "src/world/scatter/Scatter.js"
+      ],
+      "verify": "npm run build && npm run capture:fast && grep -qiE 'F2F0E6' -r src/world",
+      "title": "White wildflower specks"
+    },
+    {
+      "id": "US-004",
+      "priority": 4,
+      "passes": true,
+      "blocked": false,
+      "managerInterventions": 1,
+      "description": "Terrain: retune the eroded desert buttes toward rolling grassland hills. Find the terrain feature constants in src/world/terrain/Terrain.js (butte/mesa height and frequency) and soften them toward gentle rolls. Keep the far mountains.\n\nMANAGER: EMISSION LAW: emit ### PATCH blocks only \u2014 each hunk anchored on exact current lines from the target file. NEVER emit a whole file for any file larger than ~20KB (VegTextures.js, Vegetation.js, Terrain.js, Grass.js, Scatter.js are all too big \u2014 whole-file emission gets truncated and skipped, which is what just failed). Small new files (a new module you create) MAY be whole-file. If you need current lines, they are in the snapshot if the file is small; for large files anchor on the exact constant/line you are changing as shown in the story or BRIEF.",
+      "acceptanceCriteria": [
+        "butte constants softened",
+        "build passes",
+        "capture:fast errors: []"
+      ],
+      "allowedFiles": [
+        "src/world/terrain/Terrain.js"
+      ],
+      "verify": "npm run build && npm run capture:fast",
+      "title": "Rolling grassland hills terrain"
+    },
+    {
+      "id": "US-005",
+      "priority": 5,
+      "passes": true,
+      "blocked": false,
+      "managerInterventions": 1,
+      "description": "Tall thin pines: retune the vegetation tree constants toward tall, thin, sparse-canopy pines (Ghost of Tsushima verticals). Height up, trunk thickness down, canopy narrower and higher.\n\nMANAGER: EMISSION LAW: emit ### PATCH blocks only \u2014 each hunk anchored on exact current lines from the target file. NEVER emit a whole file for any file larger than ~20KB (VegTextures.js, Vegetation.js, Terrain.js, Grass.js, Scatter.js are all too big \u2014 whole-file emission gets truncated and skipped, which is what just failed). Small new files (a new module you create) MAY be whole-file. If you need current lines, they are in the snapshot if the file is small; for large files anchor on the exact constant/line you are changing as shown in the story or BRIEF.",
+      "acceptanceCriteria": [
+        "tree constants retuned",
+        "build passes",
+        "capture:fast errors: []"
+      ],
+      "allowedFiles": [
+        "src/world/vegetation/Vegetation.js"
+      ],
+      "verify": "npm run build && npm run capture:fast",
+      "title": "Tall thin pines"
+    },
+    {
+      "id": "US-006",
+      "priority": 6,
+      "passes": true,
+      "blocked": false,
+      "managerInterventions": 1,
+      "description": "Drift particles: add slowly falling petals/leaves drifting through the air near the player (simple instanced quads, gold #E8C97A and pale #F2E6C9, a few dozen alive at once, gentle sway). Add inside the existing render/fx or sim structure \u2014 small and self-contained.\n\nMANAGER: EMISSION LAW: emit ### PATCH blocks only \u2014 each hunk anchored on exact current lines from the target file. NEVER emit a whole file for any file larger than ~20KB (VegTextures.js, Vegetation.js, Terrain.js, Grass.js, Scatter.js are all too big \u2014 whole-file emission gets truncated and skipped, which is what just failed). Small new files (a new module you create) MAY be whole-file. If you need current lines, they are in the snapshot if the file is small; for large files anchor on the exact constant/line you are changing as shown in the story or BRIEF.",
+      "acceptanceCriteria": [
+        "drift particle system exists",
+        "build passes",
+        "capture:fast errors: []"
+      ],
+      "allowedFiles": [],
+      "verify": "npm run build && npm run capture:fast && grep -qiE 'E8C97A|F2E6C9' -r src",
+      "title": "Drifting petals and leaves"
+    },
+    {
+      "id": "US-007",
+      "priority": 7,
+      "passes": true,
+      "blocked": false,
+      "managerInterventions": 1,
+      "description": "Ronin swap: load public/assets/ronin.glb with GLTFLoader and use it as the player character mesh instead of the procedural human from src/player/rig/. Keep the existing movement code; just render and position the GLB. If a part is too large, do the smallest working version and note the gap in progress.txt.\n\nMANAGER: EMISSION LAW: emit ### PATCH blocks only \u2014 each hunk anchored on exact current lines from the target file. NEVER emit a whole file for any file larger than ~20KB (VegTextures.js, Vegetation.js, Terrain.js, Grass.js, Scatter.js are all too big \u2014 whole-file emission gets truncated and skipped, which is what just failed). Small new files (a new module you create) MAY be whole-file. If you need current lines, they are in the snapshot if the file is small; for large files anchor on the exact constant/line you are changing as shown in the story or BRIEF.",
+      "acceptanceCriteria": [
+        "GLTFLoader loads public/assets/ronin.glb",
+        "player renders the ronin mesh",
+        "build passes",
+        "capture:fast errors: []"
+      ],
+      "allowedFiles": [],
+      "verify": "npm run build && npm run capture:fast && grep -q 'ronin.glb' -r src",
+      "title": "Load ronin.glb as player mesh"
+    },
+    {
+      "id": "US-008",
+      "priority": 8,
+      "passes": true,
+      "blocked": false,
+      "managerInterventions": 1,
+      "description": "Wire ronin animations: play the GLB's 'idle' and 'walk' tracks from the movement state (idle when still, walk when moving) using THREE.AnimationMixer with crossfade. Add 'ride' when mounted if the mount system is reachable from your changes.\n\nMANAGER: EMISSION LAW: emit ### PATCH blocks only \u2014 each hunk anchored on exact current lines from the target file. NEVER emit a whole file for any file larger than ~20KB (VegTextures.js, Vegetation.js, Terrain.js, Grass.js, Scatter.js are all too big \u2014 whole-file emission gets truncated and skipped, which is what just failed). Small new files (a new module you create) MAY be whole-file. If you need current lines, they are in the snapshot if the file is small; for large files anchor on the exact constant/line you are changing as shown in the story or BRIEF.",
+      "acceptanceCriteria": [
+        "AnimationMixer drives idle/walk from movement state",
+        "build passes",
+        "capture:fast errors: []"
+      ],
+      "allowedFiles": [],
+      "verify": "npm run build && npm run capture:fast && grep -q 'AnimationMixer' -r src/player",
+      "title": "Wire idle/walk/ride animations"
+    }
+  ]
+}

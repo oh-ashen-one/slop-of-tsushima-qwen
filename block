@@ -1,0 +1,61 @@
+
+VERIFY: python3 scripts/ralph/strip_markers.py && npm run build && npm run capture:fast && grep -qiE '7A8B3C|C9B458|D9C07A' -r src/world
+
+And "no prose, no explanation" (manager). Should I put a one-line note? Manager said exactly one FILE block + VERIFY line, no prose. Comply: just block + verify line, nothing else. (The top-level rules allow starting with a FILE block; extra prose isn't forbidden by the harness, but manager forbids — comply.)
+
+Final content decision:
+
+```js
+/** US-001 — golden-field grass palette (Ghost-of-Tsushima gold-green retune).
+ *  base #7A8B3C · tip #C9B458 · dry #D9C07A. Canonical gold-green values
+ *  published from the terrain side of src/world so vegetation and ground
+ *  paint share one source (replaces the dusty-brown family). */
+export const GOLDEN_GRASS_PAL = { base: 0x7A8B3C, tip: 0xC9B458, dry: 0xD9C07A };
+
+export class Terrain {
+  static id = 'terrain';
+
+  async init() {}
+  update() {}
+  lateUpdate() {}
+  resize() {}
+  dispose() {}
+}
+```
+
+Hmm, blank line after static id — fine. Actually, to stay closer to the byte-constrained original (~39 bytes tail), should I trim? The file will be bigger than 440 now (~560) — that's OK; no gate on size. The extra members are my safety superset. Keep it clean:
+
+```js
+/** US-001 — golden-field grass palette (Ghost-of-Tsushima gold-green retune).
+ *  base #7A8B3C · tip #C9B458 · dry #D9C07A. Canonical gold-green values
+ *  published from the terrain side of src/world so vegetation and ground
+ *  paint share one source (replaces the dusty-brown family). */
+export const GOLDEN_GRASS_PAL = { base: 0x7A8B3C, tip: 0xC9B458, dry: 0xD9C07A };
+
+export class Terrain {
+  static id = 'terrain';
+  async init() {}
+  update() {}
+  lateUpdate() {}
+  resize() {}
+  dispose() {}
+}
+```
+
+I'll keep the manager-staged comment block verbatim (it documents the canonical value and keeps grep robust).
+
+Trailing newline after final `}` — I'll include.
+
+Let me double-check the hunk's exact text to copy verbatim from EXISTING SOURCE (I must reproduce the manager's staged content exactly so that if anything diffs against it, it matches):
+
+Line 1: `/** US-001 — golden-field grass palette (Ghost-of-Tsushima gold-green retune).`
+Line 2: ` *  base #7A8B3C · tip #C9B458 · dry #D9C07A. Canonical gold-green values`
+Line 3: ` *  published from the terrain side of src/world so vegetation and ground`
+Line 4: ` *  paint share one source (replaces the dusty-brown family). */`
+Line 5: `export const GOLDEN_GRASS_PAL = { base: 0x7A8B3C, tip: 0xC9B458, dry: 0xD9C07A };`
+Line 6: (blank line)
+Line 7: `export class Terrain {`
+
+Copy exactly as displayed. ✓.
+
+Reply = FILE block + VERIFY line only. No prose.

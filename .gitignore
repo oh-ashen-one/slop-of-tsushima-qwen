@@ -1,2 +1,40 @@
-node_modules
-dist
+# deps / build
+node_modules/
+dist/
+*.log
+
+# Rendered captures and the critique corpus. Large, regenerable, and refs/
+# contains third-party game screenshots used only as local critique reference —
+# they must never be redistributed.
+shots/
+refs/
+
+# One-off diagnostic probes written during development. Useful locally,
+# not part of the project.
+_probe/
+**/_*.mjs
+**/_dev/
+tools/webgl-probe.mjs
+
+# editor / os
+.DS_Store
+.vscode/
+.idea/
+.vercel/
+__pycache__/
+*.pyc
+_*.json
+_*.py
+.next/
+build/
+DerivedData/
+coverage/
+*.tsbuildinfo
+scripts/ralph/LAST_REPLY.md
+scripts/ralph/LAST_THINKING.md
+scripts/ralph/LAST_VERIFY.txt
+scripts/ralph/LAST_PLAN.md
+scripts/ralph/trajectory.jsonl
+
+# Ghost of Tsushima reference frames (copyrighted — local only)
+references/
